@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>modal_window</title>
+</head>
+<body>
+      <div class="wrapper">
+          <div class="button">
+            Открой
+          </div>
+          <div class="modal_window">
+              <div class="status_top">
+                  Статусы
+              </div>
+              <div class="content">
+                  Перед тем, как ваше обучение будет приобретено, запрос должен быть
+                  проверен и согласован. После этого начнётся закупка. Обычно процесс
+                  занимает до 25 дней, либо ориентируется на дату начала обучения. На каком
+                  этапе находится ваш запрос можно понять из статуса.
+              </div>
+              <div class="block">
+                  <div class="status_wrapper">
+                    <div class="status draft">
+                      Черновик
+                    </div>
+                  </div>
+                  <div class="text">
+                      Запрос создан, но не передан на следующий этап. Хранится в разделе «Черновики», пока инициатор не отправит запрос на проверку
+                  </div>
+              </div>
+              <div class="block">
+                  <div class="status_wrapper">
+                    <div class="status verification">
+                        На проверке
+                    </div>
+                  </div>
+                  <div class="text">
+                      Запрос в работе у ответственного за проверку
+                  </div>
+              </div>
+              <div class="block">
+                  <div class="status_wrapper">
+                    <div class="status verification_two">
+                         На согласовании
+                    </div>
+                  </div>
+                  <div class="text">
+                      Запрос находится в процессе согласования
+                  </div>
+              </div>
+              <div class="block">
+                  <div class="status_wrapper">
+                    <div class="status execution">
+                      На исполнении
+                    </div>
+                  </div>
+                  <div class="text">
+                      Запрос согласован и находится на исполнении закупки
+                  </div>
+              </div>
+              <div class="block">
+                  <div class="status_wrapper">
+                      <div class="status executed">
+                          Выполнен
+                      </div>
+                  </div>
+                  <div class="text">
+                      Все работы по запросу завершены, обучение закуплено
+                  </div>
+              </div>
+              <div class="block">
+                  <div class="status_wrapper">
+                    <div class="status rejected">
+                         Отклонен
+                    </div>
+                  </div>
+                  <div class="text">
+                      Запрос отклонён. Инициатор может запустить процесс заново, исправив причину отклонения
+                  </div>
+              </div>
+          </div>
+      </div>
+</body>
+<style>
+  html, body {
+      height: calc(100% - 20px);
+  }
+  html {
+      padding: 10px;
+  }
+  body {
+      margin: 0;
+  }
+  .wrapper{
+        font-family:"Gill Sans";
+        min-height: 100%;
+        background-color: #adacac;
+
+        padding: 10px;
+
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            width: 50px;
+            padding: 8px 16px 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+
+            background-color: white;
+            color: black;
+            font-weight: 700;
+
+            &:hover{
+                background-color: black;
+                color: #FFFFFF;
+                transition: 0.5s;
+            }
+        }
+        .modal_window {
+          display: none;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          width: 680px ;
+          height: 540px ;
+
+          background-color: white;
+          padding: 20px 20px 32px 20px;
+          border-radius: 8px;
+
+          .status_top{
+              font-weight: 700;
+              font-size: 24px;
+          }
+          .content{
+              font-size: 17px;
+              font-weight: 400;
+              margin-top: 24px;
+              line-height: 24px;
+          }
+
+          .block {
+              display: flex;
+              margin-top: 35px ;
+              .status_wrapper {
+                  min-width: 170px;
+                  .status {
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+
+                      width: fit-content;
+                      height: 24px;
+                      padding: 2px 12px 2px 12px;
+                      border-radius: 100px;
+                      font-size: 14px;
+                      font-weight: 400;
+
+                      &.draft {
+                          background-color: #9198A0;
+                          color: #FFFFFF;
+                      }
+
+                      &.verification {
+                          background-color: #FAC031;
+                          color: black;
+                      }
+
+                      &.verification_two {
+                          background-color: #FAC031;
+                          color: black;
+                      }
+
+                      &.execution {
+                          background-color: #C1EB1D;
+                          color: black;
+                      }
+
+                      &.executed {
+                          background-color: #04AA42;
+                          color: #FFFFFF;
+                      }
+
+                      &.rejected {
+                          background-color: #FA8A64;
+                          color: black;
+                      }
+                  }
+              }
+              .text{
+                  font-size: 14px;
+                  font-weight: 400;
+              }
+          }
+        }
+
+        .button:hover + .modal_window{
+              display: block;
+              cursor: pointer;
+        }
+
+  }
+</style>
+</html>
